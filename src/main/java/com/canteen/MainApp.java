@@ -12,7 +12,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load(), 400, 250);
         stage.setTitle("Smart Canteen Login");
         stage.setScene(scene);
-        System.out.println("hi");
+       // System.out.println("hi");
         stage.show();
     }
 
