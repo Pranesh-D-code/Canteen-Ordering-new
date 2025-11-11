@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            prefWidth="400" prefHeight="250">
+
+    <VBox alignment="CENTER" spacing="10"
+          AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50"
+          AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+
+        <Label text="Smart Canteen Login"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <TextField promptText="Username" prefWidth="200"/>
+        <PasswordField promptText="Password" prefWidth="200"/>
+        <Button text="Login" prefWidth="200"/>
+    </VBox>
+</AnchorPane>
