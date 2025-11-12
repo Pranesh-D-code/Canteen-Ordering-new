@@ -1,0 +1,41 @@
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.primary-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-padding: 8 20;
+    -fx-background-radius: 8;
+}
+
+.secondary-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-padding: 8 20;
+    -fx-background-radius: 8;
+}
+
+.text-field, .password-field {
+    -fx-pref-width: 200;
+}
+
+.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 6;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}

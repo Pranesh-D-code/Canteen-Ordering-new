@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.MenuController" prefWidth="700" prefHeight="460" styleClass="root">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10;">
+            <Label text="Menu" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Open Cart" onAction="#openCart" styleClass="btn-primary"/>
+        </HBox>
+    </top>
+    <center>
+        <ListView fx:id="lvMenu" prefWidth="600" prefHeight="360" style="-fx-padding:10;" />
+    </center>
+    <bottom>
+        <Label text="Double click an item to add to cart." style="-fx-padding:8;" />
+    </bottom>
+</BorderPane>

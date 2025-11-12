@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.PaymentController" spacing="12" alignment="CENTER" prefWidth="600" prefHeight="420" styleClass="root">
+    <Label text="Payment" styleClass="title"/>
+    <Label fx:id="lblSummary" wrapText="true" prefWidth="450"/>
+    <HBox spacing="10">
+        <Button text="Back to Cart" onAction="#backToCart"/>
+        <Button text="Pay Now" onAction="#payNow" styleClass="btn-primary"/>
+    </HBox>
+</VBox>

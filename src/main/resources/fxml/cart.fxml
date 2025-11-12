@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.CartController" spacing="12" alignment="CENTER" prefWidth="600" prefHeight="420" styleClass="root">
+    <Label text="Cart" styleClass="title"/>
+    <ListView fx:id="lvCart" prefHeight="250" prefWidth="450"/>
+    <Label fx:id="lblTotal" text="Total: ₹0"/>
+    <HBox spacing="10">
+        <Button text="Remove Selected" onAction="#removeSelected" />
+        <Button text="Back to Menu" onAction="#backToMenu" />
+        <Button text="Proceed to Payment" onAction="#proceedToPayment" styleClass="btn-primary"/>
+    </HBox>
+</VBox>

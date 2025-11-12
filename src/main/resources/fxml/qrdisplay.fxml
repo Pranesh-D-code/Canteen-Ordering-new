@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.QRController" spacing="12" alignment="CENTER" prefWidth="600" prefHeight="520" styleClass="root">
+    <Label text="Order Confirmed!" styleClass="title"/>
+    <ImageView fx:id="imgQR" fitWidth="300" fitHeight="300"/>
+    <TextArea fx:id="txtDecoded" prefHeight="80" wrapText="true"/>
+    <HBox spacing="10">
+        <Button text="Speak" onAction="#speakDecoded" styleClass="btn-primary"/>
+        <Button text="Back to Menu" onAction="#backToMenu"/>
+    </HBox>
+</VBox>
