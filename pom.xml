@@ -45,11 +45,25 @@
         </dependency>
 
         <!-- ✅ FreeTTS for Text-to-Speech -->
-        <dependency>
-            <groupId>com.sun.speech</groupId>
-            <artifactId>freetts</artifactId>
-            <version>1.2.2</version>
-        </dependency>
+        <!-- ✅ Working TTS dependency (Maven Central) -->
+        <dependencies>
+            <!-- ✅ HTTP client for fetching audio -->
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>5.3</version>
+            </dependency>
+
+            <!-- ✅ Audio playback -->
+            <dependency>
+                <groupId>javax.sound</groupId>
+                <artifactId>sampled</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+
+
+
 
 
         <!-- ✅ MySQL Connector -->

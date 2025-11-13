@@ -1,24 +1,36 @@
 package com.canteen.util;
 
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
+import javax.sound.sampled.*;
+import java.io.*;
+import java.net.URL;
 
 public class SpeechUtil {
 
-    private static final String VOICE_NAME = "kevin16";
-
     public static void speak(String text) {
         try {
-            Voice voice = VoiceManager.getInstance().getVoice(VOICE_NAME);
-            if (voice == null) {
-                System.err.println("Voice not found: " + VOICE_NAME);
-                return;
+            // ✅ Encode text for URL
+            String encoded = java.net.URLEncoder.encode(text, "UTF-8");
+
+            // ✅ Use Google Translate TTS (free public endpoint)
+            String urlStr = "https://translate.google.com/translate_tts?ie=UTF-8&q="
+                    + encoded + "&tl=en&client=tw-ob";
+
+            // ✅ Fetch the audio
+            URL url = new URL(urlStr);
+            try (InputStream audioSrc = url.openStream();
+                 InputStream bufferedIn = new BufferedInputStream(audioSrc);
+                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn)) {
+
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+
+                // wait till playback ends
+                Thread.sleep(clip.getMicrosecondLength() / 1000);
             }
-            voice.allocate();
-            voice.speak(text);
-            voice.deallocate();
+
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Speech error: " + e.getMessage());
         }
     }
 }
