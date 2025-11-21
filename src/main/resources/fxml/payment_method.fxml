@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.canteen.controller.PaymentMethodController"
+            style="-fx-background-color: linear-gradient(to bottom,#eef7ec,#f4faf2);">
+
+    <!-- Declare ToggleGroup properly -->
+    <fx:define>
+        <ToggleGroup fx:id="paymentGroup"/>
+    </fx:define>
+
+    <center>
+        <VBox spacing="25" alignment="CENTER" style="-fx-padding: 60;">
+
+            <Label text="Select Payment Method"
+                   style="-fx-font-size: 28px; -fx-text-fill: #1B4332; -fx-font-weight: bold;"/>
+
+            <VBox spacing="15">
+
+                <RadioButton fx:id="upiRadio" text="UPI"
+                             toggleGroup="$paymentGroup"
+                             style="-fx-font-size: 18px; -fx-text-fill: #264653;"/>
+
+                <RadioButton fx:id="gpayRadio" text="Google Pay"
+                             toggleGroup="$paymentGroup"
+                             style="-fx-font-size: 18px; -fx-text-fill: #264653;"/>
+
+                <RadioButton fx:id="paytmRadio" text="Paytm"
+                             toggleGroup="$paymentGroup"
+                             style="-fx-font-size: 18px; -fx-text-fill: #264653;"/>
+
+                <RadioButton fx:id="netBankingRadio" text="Net Banking"
+                             toggleGroup="$paymentGroup"
+                             style="-fx-font-size: 18px; -fx-text-fill: #264653;"/>
+
+            </VBox>
+
+            <Button text="Continue"
+                    onAction="#goToPaymentDetails"
+                    style="-fx-background-color: #2D6A4F; -fx-text-fill:white; -fx-padding:10 30;
+                           -fx-background-radius:10; -fx-font-size:18px;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

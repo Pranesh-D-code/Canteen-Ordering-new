@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.MenuController" prefWidth="700" prefHeight="460" styleClass="root">
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.canteen.controller.MenuController"
+            stylesheets="@../css/style.css"
+            prefWidth="1200" prefHeight="760">
+
     <top>
-        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:10;">
-            <Label text="Menu" styleClass="title"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Button text="Open Cart" onAction="#openCart" styleClass="btn-primary"/>
-        </HBox>
+        <VBox>
+            <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="top-bar">
+                <Label fx:id="usernameLabel" styleClass="top-username">Welcome</Label>
+                <Button text="Cart" onAction="#openCart" styleClass="cart-btn"/>
+            </HBox>
+            <Label text="PSG iTech Canteen Menu" styleClass="menu-title"/>
+        </VBox>
     </top>
+
     <center>
-        <ListView fx:id="lvMenu" prefWidth="600" prefHeight="360" style="-fx-padding:10;" />
+        <ScrollPane fitToWidth="true" styleClass="menu-scroll">
+            <FlowPane fx:id="menuContainer" hgap="28" vgap="28" styleClass="menu-flow" />
+        </ScrollPane>
     </center>
-    <bottom>
-        <Label text="Double click an item to add to cart." style="-fx-padding:8;" />
-    </bottom>
 </BorderPane>

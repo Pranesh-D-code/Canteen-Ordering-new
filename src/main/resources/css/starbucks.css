@@ -1,0 +1,78 @@
+/* Background Mint */
+.cart-background {
+    -fx-background-color: linear-gradient(to bottom right, #e8f5e9, #f1f8e9);
+}
+
+/* Top Bar */
+.top-bar {
+    -fx-padding: 20;
+    -fx-background-color: #006241;
+}
+
+.title-text {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.top-btn {
+    -fx-background-color: white;
+    -fx-text-fill: #006241;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 20;
+}
+
+/* CART TABLE */
+.cart-table {
+    -fx-background-radius: 12;
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 5);
+}
+
+/* Totals */
+.cart-total {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #006241;
+}
+
+/* Buttons */
+.primary-btn {
+    -fx-background-color: #006241;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+}
+
+.danger-btn {
+    -fx-background-color: #c62828;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+}
+
+/* Invoice Card */
+.invoice-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 10, 0, 0, 6);
+}
+
+.invoice-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #006241;
+}
+
+.bill-area {
+    -fx-background-color: #f9fbe7;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-font-size: 15px;
+    -fx-font-family: 'Segoe UI';
+}

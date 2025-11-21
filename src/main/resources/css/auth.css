@@ -1,0 +1,74 @@
+/* ================================
+   Starbucks Pastel Auth Theme
+   ================================*/
+
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #e8f7ee, #fefcfb);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Center card */
+.auth-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 20, 0, 0, 6);
+    -fx-spacing: 18;
+    -fx-alignment: center;
+}
+
+/* Title */
+.auth-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #245b43;
+}
+
+/* Input fields */
+.input-field {
+    -fx-padding: 10;
+    -fx-pref-width: 260;
+    -fx-background-color: #f5fff9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-color: #b6e6cd;
+    -fx-font-size: 14px;
+}
+
+.input-field:focused {
+    -fx-border-color: #4ca579;
+    -fx-effect: dropshadow(gaussian, rgba(64,158,105,0.3), 12, 0, 0, 1);
+}
+
+/* Buttons */
+.auth-btn {
+    -fx-background-color: linear-gradient(to right, #7FCF9A, #59B37A);
+    -fx-text-fill: white;
+    -fx-padding: 10 30;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.auth-btn:hover {
+    -fx-background-color: linear-gradient(to right, #6ac289, #4ea96f);
+}
+
+/* Hyperlink */
+.link {
+    -fx-text-fill: #3a7d5e;
+    -fx-font-size: 13px;
+}
+
+.link:hover {
+    -fx-text-fill: #245b43;
+    -fx-underline: true;
+}
+
+/* Error label */
+.error-label {
+    -fx-text-fill: #cc4444;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}

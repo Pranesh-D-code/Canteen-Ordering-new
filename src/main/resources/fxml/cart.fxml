@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.CartController" spacing="12" alignment="CENTER" prefWidth="600" prefHeight="420" styleClass="root">
-    <Label text="Cart" styleClass="title"/>
-    <ListView fx:id="lvCart" prefHeight="250" prefWidth="450"/>
-    <Label fx:id="lblTotal" text="Total: ₹0"/>
-    <HBox spacing="10">
-        <Button text="Remove Selected" onAction="#removeSelected" />
-        <Button text="Back to Menu" onAction="#backToMenu" />
-        <Button text="Proceed to Payment" onAction="#proceedToPayment" styleClass="btn-primary"/>
-    </HBox>
-</VBox>
+<?import javafx.geometry.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.canteen.controller.CartController"
+            style="-fx-background-color: linear-gradient(to bottom,#e8f5e9,#f1f8e9);">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-padding: 20; -fx-background-color: #1B5E20;">
+            <Label text="🛒 Your Cart"
+                   style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER CART LIST -->
+    <center>
+        <VBox spacing="15" alignment="TOP_CENTER" style="-fx-padding: 20;">
+            <TableView fx:id="cartTable" prefWidth="900">
+                <columns>
+                    <TableColumn fx:id="colName" text="Item" prefWidth="300"/>
+                    <TableColumn fx:id="colQty"  text="Qty" prefWidth="100"/>
+                    <TableColumn fx:id="colPrice" text="Price (₹)" prefWidth="150"/>
+                    <TableColumn fx:id="colTotal" text="Total (₹)" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="lblGrandTotal"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1B5E20;"/>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM BUTTONS -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <Button text="Remove Selected"
+                    onAction="#removeSelected"
+                    style="-fx-background-color:#c62828; -fx-text-fill:white; -fx-padding:10 20; -fx-font-size:14px;"/>
+
+            <Button text="Back to Menu"
+                    onAction="#backToMenu"
+                    style="-fx-background-color:#4CAF50; -fx-text-fill:white; -fx-padding:10 20; -fx-font-size:14px;"/>
+
+            <Button text="Proceed to Payment"
+                    onAction="#proceedToPayment"
+                    style="-fx-background-color:#1B5E20; -fx-text-fill:white; -fx-padding:10 20; -fx-font-size:14px;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

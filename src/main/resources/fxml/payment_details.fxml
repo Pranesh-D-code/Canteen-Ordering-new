@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.canteen.controller.PaymentDetailsController"
+            style="-fx-background-color: linear-gradient(to bottom,#eef7ec,#f4faf2);">
+
+    <center>
+        <VBox spacing="25" alignment="CENTER" style="-fx-padding: 60;">
+
+            <Label fx:id="titleLabel"
+                   style="-fx-font-size: 26px; -fx-text-fill:#1B4332; -fx-font-weight:bold;"/>
+
+            <VBox spacing="15">
+
+                <HBox spacing="10" fx:id="upiBox" visible="false" managed="false" alignment="CENTER_LEFT">
+                    <Label text="Enter UPI ID:" style="-fx-font-size:16px;"/>
+                    <TextField fx:id="upiField" promptText="example@upi" />
+                </HBox>
+
+                <VBox fx:id="netBankBox" spacing="10" visible="false" managed="false">
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Bank Name:"/>
+                        <TextField fx:id="bankField" promptText="HDFC/SBI/ICICI"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="User ID:"/>
+                        <TextField fx:id="userIdField" />
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Password:"/>
+                        <PasswordField fx:id="passwordField"/>
+                    </HBox>
+
+                </VBox>
+            </VBox>
+
+            <Button text="Generate QR"
+                    onAction="#proceedToQR"
+                    style="-fx-background-color:#2D6A4F; -fx-text-fill:white; -fx-padding:10 30;
+                           -fx-background-radius:10; -fx-font-size:18px;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

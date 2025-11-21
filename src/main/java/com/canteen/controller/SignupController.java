@@ -1,8 +1,6 @@
 package com.canteen.controller;
 
 import com.canteen.dao.UserDAO;
-import com.canteen.app.AppSession;
-import com.canteen.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class LoginController {
+public class SignupController {
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
@@ -19,31 +17,29 @@ public class LoginController {
     private final UserDAO userDAO = new UserDAO();
 
     @FXML
-    private void handleLogin(javafx.event.ActionEvent event) {
+    private void handleSignup(javafx.event.ActionEvent event) {
 
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
-            errorLabel.setText("Please enter both fields.");
+            errorLabel.setText("All fields are required.");
             return;
         }
 
-        User user = userDAO.fetchUser(username, password);
+        boolean ok = userDAO.registerUser(username, password);
 
-        if (user == null) {
-            errorLabel.setText("Invalid username or password.");
+        if (!ok) {
+            errorLabel.setText("Username already exists.");
             return;
         }
 
-        AppSession.setUser(user);
-
-        loadPage(event, "/fxml/menu.fxml");
+        loadPage(event, "/fxml/login.fxml");
     }
 
     @FXML
-    private void goToSignup(javafx.event.ActionEvent event) {
-        loadPage(event, "/fxml/signup.fxml");
+    private void goToLogin(javafx.event.ActionEvent event) {
+        loadPage(event, "/fxml/login.fxml");
     }
 
     private void loadPage(javafx.event.ActionEvent event, String fxml) {

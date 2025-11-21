@@ -1,73 +1,61 @@
 package com.canteen.controller;
 
-import com.canteen.app.AppSession;
-import com.canteen.dao.OrderDAO;
-import com.canteen.model.MenuItem;
-import com.canteen.model.Order;
-import com.canteen.util.QRGenerator;
-import com.google.zxing.WriterException;
+import com.canteen.model.CartItem;
+import com.canteen.util.CartManager;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.Node;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class PaymentController {
 
-    @FXML private Label lblSummary;
-    private final OrderDAO orderDAO = new OrderDAO();
+    @FXML private ListView<String> billList;
+    @FXML private Label totalLabel;
+    @FXML private Button payBtn;
 
     @FXML
-    public void initialize() {
-        List<MenuItem> cart = AppSession.getCart();
-        String items = cart.stream().map(MenuItem::getName).collect(Collectors.joining(", "));
-        double total = cart.stream().mapToDouble(MenuItem::getPrice).sum();
-        lblSummary.setText("Items: " + items + "\nTotal: ₹" + total);
+    private void initialize() {
+        billList.getItems().clear();
+
+        for (CartItem item : CartManager.getItems()) {
+            billList.getItems().add(
+                    item.getName() + " × " + item.getQuantity() + " = ₹" + item.getTotal()
+            );
+        }
+
+        totalLabel.setText("₹ " + CartManager.getGrandTotal());
     }
 
     @FXML
+
     private void payNow() {
-        List<MenuItem> cart = AppSession.getCart();
-        String items = cart.stream().map(MenuItem::getName).collect(Collectors.joining(", "));
-        double total = cart.stream().mapToDouble(MenuItem::getPrice).sum();
-
         try {
-            Order order = new Order();
-            order.setUserId(AppSession.getUser().getId());
-            order.setItems(items);
-            order.setTotalPrice(total);
-            order.setQrPath("");
-            int id = orderDAO.save(order);
-
-            String qrText = "Order #" + id + " | Items: " + items + " | Total: ₹" + total;
-            String qrUri = QRGenerator.generate(qrText, "order_" + id);
-            orderDAO.updateQrPath(id, qrUri);
-
-            AppSession.setLastQrText(qrText);
-            AppSession.setLastQrUri(qrUri);
-
-            // clear cart
-            AppSession.clearCart();
-
-            // go to QR display
-            Stage stage = (Stage) lblSummary.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/qrdisplay.fxml"));
-            stage.setScene(new Scene(root));
-        } catch (IOException | WriterException ex) {
-            ex.printStackTrace();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/payment_method.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) payBtn.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    @FXML private void backToCart() {
+
+    @FXML
+    private void backToCart(javafx.event.ActionEvent event) {
         try {
-            Stage stage = (Stage) lblSummary.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/cart.fxml"));
-            stage.setScene(new Scene(root));
-        } catch (IOException e) { e.printStackTrace(); }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

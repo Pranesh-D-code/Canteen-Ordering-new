@@ -1,41 +1,191 @@
-.title-label {
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333;
+/* =========================
+   Starbucks Pastel Theme (C)
+   ========================= */
+
+/* Root / background */
+.root, .border-pane {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: linear-gradient(to bottom right, #DFF5E3, #F7F2EB);
 }
 
-.primary-button {
-    -fx-background-color: #007bff;
+/* Top bar */
+.top-bar {
+    -fx-padding: 14 22;
+    -fx-background-color: linear-gradient(to right, #BFEBD9, #E8F7EE);
+    -fx-border-color: transparent;
+}
+
+.top-username {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1f6f4b;
+    -fx-padding: 0 12 0 12;
+}
+
+/* Cart button */
+.cart-btn {
+    -fx-background-color: linear-gradient(to right, #7FCF9A, #59B37A);
     -fx-text-fill: white;
-    -fx-padding: 8 20;
+    -fx-font-weight: 700;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 2);
+}
+
+/* Menu title */
+.menu-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #245b43;
+    -fx-padding: 8 0 16 20;
+}
+
+/* Flow / container */
+.menu-flow {
+    -fx-padding: 24 40 40 40;
+}
+
+/* Food card */
+.food-card {
+    -fx-pref-width: 260;
+    -fx-pref-height: 360;
+    -fx-padding: 14;
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(34,34,34,0.08), 12, 0, 0, 6);
+    -fx-spacing: 8;
+    -fx-alignment: top_center;
+}
+
+/* image container */
+.food-image {
+    -fx-pref-width: 220;
+    -fx-pref-height: 140;
     -fx-background-radius: 8;
+    -fx-alignment: center;
 }
 
-.secondary-button {
-    -fx-background-color: #28a745;
+/* texts */
+.food-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #233a33;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.food-category {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7a8b80;
+}
+
+.food-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #2f7f58;
+}
+
+/* quantity controls */
+.qty-box {
+    -fx-alignment: center-left;
+    -fx-spacing: 8;
+}
+
+.qty-spinner {
+    -fx-pref-width: 100;
+}
+
+/* add button */
+.add-btn {
+    -fx-background-color: linear-gradient(to right, #7FCF9A, #59B37A);
     -fx-text-fill: white;
-    -fx-padding: 8 20;
+    -fx-font-weight: 700;
     -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
 }
 
-.text-field, .password-field {
-    -fx-pref-width: 200;
+/* hover */
+.food-card:hover {
+    -fx-translate-y: -4;
+    -fx-effect: dropshadow(gaussian, rgba(34,34,34,0.14), 18, 0, 0, 10);
 }
 
-.title {
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
+/* Cart page styling */
+.cart-root {
+    -fx-padding: 20 40;
 }
 
-.button {
-    -fx-background-color: #3498db;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-padding: 6 12 6 12;
+.cart-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #245b43;
+    -fx-padding: 0 0 12 0;
+}
+
+.cart-list {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 6);
+}
+
+.cart-row {
+    -fx-spacing: 12;
+    -fx-padding: 10 8;
+    -fx-alignment: center-left;
+}
+
+.cart-thumb {
+    -fx-pref-width: 64;
+    -fx-pref-height: 48;
     -fx-background-radius: 6;
 }
 
-.button:hover {
-    -fx-background-color: #2980b9;
+/* small buttons */
+.small-btn {
+    -fx-background-radius: 8;
+    -fx-padding: 6 10;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+/* total area */
+.total-box {
+    -fx-alignment: center_right;
+    -fx-padding: 12 0;
+}
+
+.total-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #233a33;
+}
+
+/* Payment page */
+.payment-root {
+    -fx-padding: 24 40;
+}
+
+.payment-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0, 0, 8);
+    -fx-pref-width: 920;
+}
+
+/* QR image */
+.qr-image {
+    -fx-fit-width: 320;
+    -fx-fit-height: 320;
+    -fx-preserve-ratio: true;
+}
+
+/* small text */
+.small-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7a8b80;
 }

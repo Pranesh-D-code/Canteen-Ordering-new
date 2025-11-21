@@ -45,23 +45,12 @@
         </dependency>
 
         <!-- ✅ FreeTTS for Text-to-Speech -->
-        <!-- ✅ Working TTS dependency (Maven Central) -->
-        <dependencies>
-            <!-- ✅ HTTP client for fetching audio -->
-            <dependency>
-                <groupId>org.apache.httpcomponents.client5</groupId>
-                <artifactId>httpclient5</artifactId>
-                <version>5.3</version>
-            </dependency>
-
-            <!-- ✅ Audio playback -->
-            <dependency>
-                <groupId>javax.sound</groupId>
-                <artifactId>sampled</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        </dependencies>
-
+        <!-- Note: Using Apache HttpClient for web requests -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.3</version>
+        </dependency>
 
 
 
@@ -128,7 +117,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.example.MainApp</mainClass>
+                    <mainClass>com.canteen.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

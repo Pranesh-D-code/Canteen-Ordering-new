@@ -5,7 +5,7 @@
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            stylesheets="@../css/auth.css"
-           fx:controller="com.canteen.controller.LoginController"
+           fx:controller="com.canteen.controller.SignupController"
            style="-fx-background-image: url('/images/bg.png');
                   -fx-background-size: cover;
                   -fx-background-position: center center;">
@@ -14,16 +14,16 @@
 
         <VBox spacing="20" styleClass="auth-card">
 
-            <Label text="PSG iTech Canteen" styleClass="auth-title"/>
+            <Label text="Create Account" styleClass="auth-title"/>
 
             <TextField fx:id="usernameField" promptText="Username" styleClass="input-field"/>
             <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field"/>
 
             <Label fx:id="errorLabel" styleClass="error-label"/>
 
-            <Button text="Login" onAction="#handleLogin" styleClass="auth-btn"/>
+            <Button text="Sign Up" onAction="#handleSignup" styleClass="auth-btn"/>
 
-            <Hyperlink text="Create an account" onAction="#goToSignup" styleClass="link"/>
+            <Hyperlink text="Back to Login" onAction="#goToLogin" styleClass="link"/>
 
         </VBox>
 

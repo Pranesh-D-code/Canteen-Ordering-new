@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.canteen.controller.SuccessController"
+           style="-fx-background-color: linear-gradient(to bottom,#e8f5e9,#c8e6c9);">
+
+    <VBox alignment="CENTER" spacing="20">
+
+        <ImageView fx:id="tickImage"
+                   fitWidth="160"
+                   preserveRatio="true"/>
+
+        <Label text="Payment Successful!"
+               style="-fx-font-size:32px; -fx-text-fill:#1B5E20; -fx-font-weight:bold;"/>
+
+        <Label fx:id="orderIdLabel"
+               style="-fx-font-size:18px; -fx-text-fill:#33691E;"/>
+
+        <Button text="Back to Menu"
+                onAction="#goHome"
+                style="-fx-background-color:#1B5E20; -fx-text-fill:white;
+                       -fx-padding:10 20; -fx-font-size:18px; -fx-background-radius:10;"/>
+    </VBox>
+
+</StackPane>

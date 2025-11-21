@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.canteen.controller.PaymentController" spacing="12" alignment="CENTER" prefWidth="600" prefHeight="420" styleClass="root">
-    <Label text="Payment" styleClass="title"/>
-    <Label fx:id="lblSummary" wrapText="true" prefWidth="450"/>
-    <HBox spacing="10">
-        <Button text="Back to Cart" onAction="#backToCart"/>
-        <Button text="Pay Now" onAction="#payNow" styleClass="btn-primary"/>
-    </HBox>
-</VBox>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.canteen.controller.PaymentController"
+            style="-fx-background-color: linear-gradient(to bottom,#e8f5e9,#c8e6c9);">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-padding: 20; -fx-background-color:#1B5E20;">
+            <Label text="💳 Payment"
+                   style="-fx-font-size: 26px; -fx-text-fill:white; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER BILL LIST -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+
+            <ListView fx:id="billList" prefWidth="600" prefHeight="300"
+                      style="-fx-font-size:16px; -fx-background-radius:10;"/>
+
+            <Label fx:id="totalLabel"
+                   style="-fx-font-size:24px; -fx-font-weight:bold; -fx-text-fill:#1B5E20;"/>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM BUTTONS -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding:20;">
+            <Button text="Back to Cart"
+                    onAction="#backToCart"
+                    style="-fx-background-color:#558B2F; -fx-text-fill:white; -fx-padding:10 20; -fx-font-size:14px;"/>
+
+            <Button fx:id="payBtn"
+                    text="Pay Now"
+                    onAction="#payNow"
+                    style="-fx-background-color:#1B5E20; -fx-text-fill:white; -fx-padding:10 30; -fx-font-size:16px; -fx-font-weight:bold;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
